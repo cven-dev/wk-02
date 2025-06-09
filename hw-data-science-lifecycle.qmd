@@ -16,13 +16,16 @@ This homework assignment is designed as a guided walkthrough of the data science
 
 As you work through each task, carefully read the step-by-step instructions and identify the corresponding elements in the provided code. This format will help you understand how I will describe coding tasks in future exercises, so pay attention to how each step connects to specific parts of the code.
 
-Your main objectives are to: - Run each code chunk and ensure it executes without errors - Verify that each step produces the expected results - Understand the connection between the task descriptions and the code implementation
+Your main objectives are to:
+- Run each code chunk and ensure it executes without errors
+- Verify that each step produces the expected results  
+- Understand the connection between the task descriptions and the code implementation
 
 # Task 0: Load R packages
 
 The required R Packages are loaded at the beginning of the script.
 
-1.  Run the code contained in the code-chunk and fix any errors. (**Tipp: Green play button in the top right corner of the code-chunk.**)
+1.  Run the code chunk and fix any errors. (**Tip: Green play button in the top right corner of the code chunk.**)
 
 ```{r}
 library(readr)
@@ -39,7 +42,7 @@ library(here)
 -   The assignment operator (`<-`) assigns the data to an object named `global_waste_data`
 -   The `here()` function creates a proper file path
 
-2.  Run the code contained in the code-chunk and verify it executes without errors
+2.  Run the code chunk and verify it executes without errors
 
 3.  Render the document and fix any errors
 
@@ -55,12 +58,12 @@ global_waste_data <- read_csv(here("wk-02/data/country_level_data_0.csv"))
 
 -   The code starts with the `global_waste_data` object
 -   The pipe operator (`|>`) connects the `select()` function to choose specific variables
--   Five variables are selected: country_name, iso3c, income_id, total_msw_total_msw_generated_tons_year, and population_population_number_of_people
+-   Five variables are selected: country_name, iso3c, income_id, total_msw_total_msw_generated_tons_year, and population_population_number_of_people (note the long descriptive variable names from the original dataset)
 -   Another pipe operator (`|>`) connects the `rename()` function
 -   Two variables are renamed for clarity: 'total_msw_total_msw_generated_tons_year' becomes 'msw_tons_year' and 'population_population_number_of_people' becomes 'population'
 -   The assignment operator (`<-`) assigns the result to `global_waste_data_small`
 
-2.  Run the code contained in the code-chunk and verify it executes without errors
+2.  Run the code chunk and verify it executes without errors
 
 3.  Render the document and fix any errors
 
@@ -85,7 +88,7 @@ global_waste_data_small <- global_waste_data |>
 -   Another `mutate()` function converts 'income_id' to a factor with specific level ordering
 -   The assignment operator (`<-`) assigns the result to `global_waste_data_kg_year`
 
-2.  Run the code contained in the code-chunk and verify it executes without errors
+2.  Run the code chunk and verify it executes without errors
 
 3.  Render the document and fix any errors
 
@@ -113,7 +116,7 @@ global_waste_data_kg_year <- global_waste_data_small |>
 -   `labs()` provides custom axis labels
 -   `theme_minimal()` applies a clean visual theme
 
-2.  Run the code contained in the code-chunk and verify it executes without errors
+2.  Run the code chunk and verify it executes without errors
 
 3.  Render the document and fix any errors
 
@@ -141,7 +144,7 @@ ggplot(data = global_waste_data_kg_year,
   theme_minimal(base_size = 14) 
 ```
 
-# Task 6: Complete assignment
+# Task 5: Complete assignment
 
 ## Stage, Commit & Push to GitHub
 
@@ -156,7 +159,7 @@ This final section introduces the workflow you need to follow at the end of each
 
 ## Open an issue on GitHub
 
-Once you have ensured that the Quarto document renders without errors and you have pushed all your changes to GitHub, it is to complete the assignment by opening an issue on your wk-02-USERNAME GitHub repo (where USERNAME is your GitHub username).
+Once you have ensured that the Quarto document renders without errors and you have pushed all your changes to GitHub, it is time to complete the assignment by opening an issue on your wk-02-USERNAME GitHub repo (where USERNAME is your GitHub username).
 
 1.  Navigate to your wk-02-USERNAME GitHub repo (where USERNAME is your GitHub username).
 2.  Click on **Issues**, and then **New issue** button.
