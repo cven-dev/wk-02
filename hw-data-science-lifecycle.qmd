@@ -39,17 +39,13 @@ library(here)
 -   The assignment operator (`<-`) assigns the data to an object named `global_waste_data`
 -   The `here()` function creates a proper file path
 
-2.  Change the code-chunk option `#| eval:` from `false` to `true`
+2.  Run the code contained in the code-chunk and verify it executes without errors
 
-3.  Run the code contained in the code-chunk and verify it executes without errors
-
-4.  Render the document and fix any errors
+3.  Render the document and fix any errors
 
 **Note:** You will learn more about the use of the `here()` function when we look at data import in more detail.
 
 ```{r}
-#| eval: false
-
 global_waste_data <- read_csv(here("wk-02/data/country_level_data_0.csv"))
 ```
 
@@ -64,15 +60,11 @@ global_waste_data <- read_csv(here("wk-02/data/country_level_data_0.csv"))
 -   Two variables are renamed for clarity: 'total_msw_total_msw_generated_tons_year' becomes 'msw_tons_year' and 'population_population_number_of_people' becomes 'population'
 -   The assignment operator (`<-`) assigns the result to `global_waste_data_small`
 
-2.  Change the code-chunk option `#| eval:` from `false` to `true`
+2.  Run the code contained in the code-chunk and verify it executes without errors
 
-3.  Run the code contained in the code-chunk and verify it executes without errors
-
-4.  Render the document and fix any errors
+3.  Render the document and fix any errors
 
 ```{r}
-#| eval: false
-
 global_waste_data_small <- global_waste_data |> 
   select(country_name, 
          iso3c, 
@@ -93,19 +85,15 @@ global_waste_data_small <- global_waste_data |>
 -   Another `mutate()` function converts 'income_id' to a factor with specific level ordering
 -   The assignment operator (`<-`) assigns the result to `global_waste_data_kg_year`
 
-2.  Change the code-chunk option `#| eval:` from `false` to `true`
+2.  Run the code contained in the code-chunk and verify it executes without errors
 
-3.  Run the code contained in the code-chunk and verify it executes without errors
+3.  Render the document and fix any errors
 
-4.  Render the document and fix any errors
-
-5.  Describe in your own words what the `mutate()` function does in this code-chunk
+4.  Describe in your own words what the `mutate()` function does in this code-chunk
 
 <!--# Remove this comment and write your text here -->
 
 ```{r}
-#| eval: false
-
 global_waste_data_kg_year <- global_waste_data_small |> 
   mutate(capita_kg_year = msw_tons_year / population * 1000) |> 
   mutate(income_id = factor(income_id, 
@@ -125,27 +113,23 @@ global_waste_data_kg_year <- global_waste_data_small |>
 -   `labs()` provides custom axis labels
 -   `theme_minimal()` applies a clean visual theme
 
-2.  Change the code-chunk option `#| eval:` from `false` to `true`
+2.  Run the code contained in the code-chunk and verify it executes without errors
 
-3.  Run the code contained in the code-chunk and verify it executes without errors
+3.  Render the document and fix any errors
 
-4.  Render the document and fix any errors
-
-5.  Look at the plot that you created and describe what the `mutate()` function achieved in the previous task
+4.  Look at the plot that you created and describe what the `mutate()` function achieved in the previous task
 
 <!--# Remove this comment and write your text here -->
 
-6.  Describe in your own words what the 'color' argument inside the `aes()` does
+5.  Describe in your own words what the 'color' argument inside the `aes()` does
 
 <!--# Remove this comment and write your text here -->
 
-7.  Describe in your own words what the `labs()` function does
+6.  Describe in your own words what the `labs()` function does
 
 <!--# Remove this comment and write your text here -->
 
 ```{r}
-#| eval: false
-
 ggplot(data = global_waste_data_kg_year,
        mapping = aes(x = income_id, 
                      y = capita_kg_year,
